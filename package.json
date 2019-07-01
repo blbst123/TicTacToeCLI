@@ -1,0 +1,23 @@
+{
+  "name": "TicTacToeCLI",
+  "version": "1.0.0",
+  "description": "2 player TicTacToe game played from the command line",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blbst123/TicTacToeCLI.git"
+  },
+  "keywords": [],
+  "author": "Bill Lou <billloukehao@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blbst123/TicTacToeCLI/issues"
+  },
+  "homepage": "https://github.com/blbst123/TicTacToeCLI#readme",
+  "dependencies": {
+    "keypress": "^0.2.1"
+  }
+}
