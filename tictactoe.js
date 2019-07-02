@@ -1,5 +1,5 @@
 // TODO: TOGGLE DISPLAYING NUMBERS
-class TicTacToeBoard {
+module.exports = class TicTacToeBoard {
   constructor() {
     this.boardStr = '   |   |   \n---+---+---\n   |   |   \n---+---+---\n   |   |   ';
     this.boardArr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
@@ -99,5 +99,3 @@ class TicTacToeBoard {
     }
   }
 }
-
-module.exports = new TicTacToeBoard();

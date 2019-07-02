@@ -1,5 +1,6 @@
 const readline = require('readline');
-const ticTacToe = require('./tictactoe');
+const ticTacToeClass = require('./tictactoe');
+const ticTacToe = new ticTacToeClass();
 
 readline.emitKeypressEvents(process.stdin);
 process.stdin.setRawMode(true);
