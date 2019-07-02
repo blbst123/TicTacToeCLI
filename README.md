@@ -1,7 +1,7 @@
 # TicTacToeCLI
 2 player TicTacToe game played from the command line
 
-## 💻 Starting the game locally
+## 💻 Setting up the game locally
 
 This game is completely run and played on the command line. You need to have node and git installed on your computer.<br />
 Clone this repo and and navigate into the directory:
@@ -26,6 +26,7 @@ If you followed the correct steps to setup and start the game, you should see th
      4 | 5 | 6 
     ---+---+---
      7 | 8 | 9 
+    
     Players will take turns placing pieces onto the board by typing the number located at that spot.
     Players X, start!
   ```

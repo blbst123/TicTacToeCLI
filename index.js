@@ -1,12 +1,11 @@
 const readline = require('readline');
 
 console.log('Welcome to TicTacToe CLI game!');
-console.log('This is a visual representation of the TicTacToe board with numbers representing locations:');
-console.log();
-console.log(' 1 | 2 | 3 \n---+---+---\n 4 | 5 | 6 \n---+---+---\n 7 | 8 | 9 ');
-console.log();
+console.log('CTRL C to exit; B to Toggle board view\n');
+console.log('This is a visual representation of the TicTacToe board with numbers representing locations:\n');
+console.log(' 1 | 2 | 3 \n---+---+---\n 4 | 5 | 6 \n---+---+---\n 7 | 8 | 9 \n');
 console.log('Players will take turns placing pieces onto the board by typing the number located at that spot.');
-console.log('Players X, start!');
+console.log('Players X, start!\n');
 
 let boardStr = '   |   |   \n---+---+---\n   |   |   \n---+---+---\n   |   |   ';
 let boardArr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
@@ -40,7 +39,7 @@ const checkWin = function () {
 
 const playPiece = function (str) {
   if (placed[str]) {
-    console.log('That location is taken!');
+    console.log('That location is taken!\n');
     return false;
   }
 
@@ -91,7 +90,7 @@ const playPiece = function (str) {
       return true;
 
     default:
-      console.log("That's not a valid location!");
+      console.log("That's not a valid location!\n");
       return false;
   }
 }
@@ -105,7 +104,7 @@ process.stdin.on('keypress', (str, key) => {
   } else {
     if (playPiece(str)) {
       placed[str] = true;
-      console.log(`Player ${player} has played a piece in position ${str}.`);
+      console.log(`Player ${player} has played a piece in position ${str}.\n`);
       console.log(boardStr);
       console.log();
       counter++;
@@ -120,8 +119,7 @@ process.stdin.on('keypress', (str, key) => {
         console.log(`It is now Player ${player}'s turn!`);
       }
     } else {
-      console.log('Please play a valid location.');
-      console.log();
+      console.log("That's not a valid location!\n");
     }
   }
 });
