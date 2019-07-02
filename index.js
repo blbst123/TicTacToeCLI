@@ -6,13 +6,7 @@ console.log();
 console.log('1|2|3\n-+-+-\n4|5|6\n-+-+-\n7|8|9');
 console.log();
 console.log('Players will take turns placing pieces onto the board by typing the number located at that spot.');
-
 console.log('Players X, start!');
-
-// console.log(board2);
-// board2[2] = '5';
-// board2 = board2.slice(0,2) + '5' + board2.slice(3);
-// let board2 = '1|2|3\n-+-+-\n4|5|6\n-+-+-\n7|8|9';
 
 let boardStr = ' | | \n-+-+-\n | | \n-+-+-\n | | ';
 let boardArr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
