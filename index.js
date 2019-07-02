@@ -1,19 +1,20 @@
 const readline = require('readline');
 
-console.log('Welcome to TicTacToe CLI game.');
+console.log('Welcome to TicTacToe CLI game!');
 console.log('This is a visual representation of the TicTacToe board with numbers representing locations:');
 console.log();
-console.log('1|2|3\n-+-+-\n4|5|6\n-+-+-\n7|8|9');
+console.log(' 1 | 2 | 3 \n---+---+---\n 4 | 5 | 6 \n---+---+---\n 7 | 8 | 9 ');
 console.log();
 console.log('Players will take turns placing pieces onto the board by typing the number located at that spot.');
 console.log('Players X, start!');
 
-let boardStr = ' | | \n-+-+-\n | | \n-+-+-\n | | ';
+let boardStr = '   |   |   \n---+---+---\n   |   |   \n---+---+---\n   |   |   ';
 let boardArr = [[0, 0, 0], [0, 0, 0], [0, 0, 0]];
 let player = 'X';
 let placed = { 1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false };
 let counter = 0;
 
+// TODO: TOGGLE DISPLAYING NUMBERS
 
 const switchPlayer = function () {
   if (player === 'X') return player = 'O';
@@ -45,47 +46,47 @@ const playPiece = function (str) {
 
   switch (str) {
     case '1':
-      boardStr = player + boardStr.slice(1);
+      boardStr = boardStr.slice(0, 1) + player + boardStr.slice(2);
       boardArr[0][0] = player;
       return true;
 
     case '2':
-      boardStr = boardStr.slice(0, 2) + player + boardStr.slice(3);
+      boardStr = boardStr.slice(0, 5) + player + boardStr.slice(6);
       boardArr[0][1] = player;
       return true;
 
     case '3':
-      boardStr = boardStr.slice(0, 4) + player + boardStr.slice(5);
+      boardStr = boardStr.slice(0, 9) + player + boardStr.slice(10);
       boardArr[0][2] = player;
       return true;
 
     case '4':
-      boardStr = boardStr.slice(0, 12) + player + boardStr.slice(13);
+      boardStr = boardStr.slice(0, 25) + player + boardStr.slice(26);
       boardArr[1][0] = player;
       return true;
 
     case '5':
-      boardStr = boardStr.slice(0, 14) + player + boardStr.slice(15);
+      boardStr = boardStr.slice(0, 29) + player + boardStr.slice(30);
       boardArr[1][1] = player;
       return true;
 
     case '6':
-      boardStr = boardStr.slice(0, 16) + player + boardStr.slice(17);
+      boardStr = boardStr.slice(0, 33) + player + boardStr.slice(34);
       boardArr[1][2] = player;
       return true;
 
     case '7':
-      boardStr = boardStr.slice(0, 24) + player + boardStr.slice(25);
+      boardStr = boardStr.slice(0, 49) + player + boardStr.slice(50);
       boardArr[2][0] = player;
       return true;
 
     case '8':
-      boardStr = boardStr.slice(0, 26) + player + boardStr.slice(27);
+      boardStr = boardStr.slice(0, 53) + player + boardStr.slice(54);
       boardArr[2][1] = player;
       return true;
 
     case '9':
-      boardStr = boardStr.slice(0, 28) + player + boardStr.slice(29);
+      boardStr = boardStr.slice(0, 57) + player + boardStr.slice(58);
       boardArr[2][2] = player;
       return true;
 
