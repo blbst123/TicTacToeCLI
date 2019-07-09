@@ -46,7 +46,7 @@ describe('TicTacToe game', function () {
     });
   });
 
-  describe('swapping players automatically', function () {
+  describe('switching players automatically', function () {
     const ticTacToe = new ticTacToeClass();
 
     it('should start with player X', function () {
@@ -71,7 +71,7 @@ describe('TicTacToe game', function () {
   });
 
   describe('winning a game', function () {
-    it('row win for player X', function () {
+    it('in row 1 for player X', function () {
       const ticTacToe = new ticTacToeClass();
       ticTacToe.playPiece('1');
       ticTacToe.playPiece('4');
@@ -82,7 +82,7 @@ describe('TicTacToe game', function () {
       assert.equal(true, ticTacToe.checkWin());
     });
 
-    it('row win for player O', function () {
+    it('in row 2 for player O', function () {
       const ticTacToe = new ticTacToeClass();
       ticTacToe.playPiece('1');
       ticTacToe.playPiece('4');
@@ -94,5 +94,43 @@ describe('TicTacToe game', function () {
       assert.equal(true, ticTacToe.checkWin());
     });
 
+    it('in column for player X', function () {
+      const ticTacToe = new ticTacToeClass();
+      ticTacToe.playPiece('2');
+      ticTacToe.playPiece('4');
+      ticTacToe.playPiece('5');
+      ticTacToe.playPiece('1');
+      ticTacToe.playPiece('8');
+      assert.strictEqual('X', ticTacToe.player);
+      assert.equal(true, ticTacToe.checkWin());
+    });
+
+    it('in column for player O', function () {
+      const ticTacToe = new ticTacToeClass();
+      ticTacToe.playPiece('1');
+      ticTacToe.playPiece('3');
+      ticTacToe.playPiece('5');
+      ticTacToe.playPiece('6');
+      ticTacToe.playPiece('8');
+      ticTacToe.playPiece('9');
+      assert.strictEqual('O', ticTacToe.player);
+      assert.equal(true, ticTacToe.checkWin());
+    });
+  });
+
+  describe('drawing a game', function () {
+    it('having count === 9', function () {
+      const ticTacToe = new ticTacToeClass();
+      ticTacToe.playPiece('1');
+      ticTacToe.playPiece('4');
+      ticTacToe.playPiece('2');
+      ticTacToe.playPiece('5');
+      ticTacToe.playPiece('6');
+      ticTacToe.playPiece('9');
+      ticTacToe.playPiece('8');
+      ticTacToe.playPiece('3');
+      ticTacToe.playPiece('7');
+      assert.equal(9, ticTacToe.counter);
+    });
   });
 });
