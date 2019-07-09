@@ -10,10 +10,7 @@ process.stdin.on('keypress', (str, key) => {
     process.exit();
   } else {
     if (ticTacToe.playPiece(str)) {
-      if (ticTacToe.checkWin()) {
-        process.exit();
-      }
+      process.exit();
     }
   }
 });
-

@@ -113,6 +113,6 @@ module.exports = class TicTacToeBoard {
     this.counter++;
     console.log(`Player ${this.player} has played a piece in position ${str}.\n`);
     console.log(this.boardStr + '\n');
-    return true;
+    return this.checkWin();
   }
 }
