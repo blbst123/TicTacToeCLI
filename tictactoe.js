@@ -25,19 +25,30 @@ module.exports = class TicTacToeBoard {
   }
 
   checkWin() {
+    let status = 'none';
     // check rows
     for (let i = 0; i < this.boardArr.length; i++) {
-      if (this.boardArr[i][0] === this.player && this.boardArr[i][1] === this.player && this.boardArr[i][2] === this.player) return true;
+      if (this.boardArr[i][0] === this.player && this.boardArr[i][1] === this.player && this.boardArr[i][2] === this.player) status = 'win';
     }
     // check columns
     for (let j = 0; j < this.boardArr.length; j++) {
-      if (this.boardArr[0][j] === this.player && this.boardArr[1][j] === this.player && this.boardArr[2][j] === this.player) return true;
+      if (this.boardArr[0][j] === this.player && this.boardArr[1][j] === this.player && this.boardArr[2][j] === this.player) status = 'win';
     }
 
     // check diagonals
-    if (this.boardArr[0][0] === this.player && this.boardArr[1][1] === this.player && this.boardArr[2][2] === this.player) return true;
-    if (this.boardArr[0][2] === this.player && this.boardArr[1][1] === this.player && this.boardArr[2][0] === this.player) return true;
+    if (this.boardArr[0][0] === this.player && this.boardArr[1][1] === this.player && this.boardArr[2][2] === this.player) status = 'win';
+    if (this.boardArr[0][2] === this.player && this.boardArr[1][1] === this.player && this.boardArr[2][0] === this.player) status = 'win';
 
+    if (status === 'win') {
+      console.log(`Player ${this.player} wins! Restart to play again.`);
+      return true;
+    } 
+    if (this.counter === 9) {
+      console.log('Game has drawn! Restart to play again.');
+      return true;
+    }
+
+    this.switchPlayer();
     return false;
   }
 
@@ -51,51 +62,57 @@ module.exports = class TicTacToeBoard {
       case '1':
         this.boardStr = this.boardStr.slice(0, 1) + this.player + this.boardStr.slice(2);
         this.boardArr[0][0] = this.player;
-        return true;
+        break;
 
       case '2':
         this.boardStr = this.boardStr.slice(0, 5) + this.player + this.boardStr.slice(6);
         this.boardArr[0][1] = this.player;
-        return true;
+        break;
 
       case '3':
         this.boardStr = this.boardStr.slice(0, 9) + this.player + this.boardStr.slice(10);
         this.boardArr[0][2] = this.player;
-        return true;
+        break;
 
       case '4':
         this.boardStr = this.boardStr.slice(0, 25) + this.player + this.boardStr.slice(26);
         this.boardArr[1][0] = this.player;
-        return true;
+        break;
 
       case '5':
         this.boardStr = this.boardStr.slice(0, 29) + this.player + this.boardStr.slice(30);
         this.boardArr[1][1] = this.player;
-        return true;
+        break;
 
       case '6':
         this.boardStr = this.boardStr.slice(0, 33) + this.player + this.boardStr.slice(34);
         this.boardArr[1][2] = this.player;
-        return true;
+        break;
 
       case '7':
         this.boardStr = this.boardStr.slice(0, 49) + this.player + this.boardStr.slice(50);
         this.boardArr[2][0] = this.player;
-        return true;
+        break;
 
       case '8':
         this.boardStr = this.boardStr.slice(0, 53) + this.player + this.boardStr.slice(54);
         this.boardArr[2][1] = this.player;
-        return true;
+        break;
 
       case '9':
         this.boardStr = this.boardStr.slice(0, 57) + this.player + this.boardStr.slice(58);
         this.boardArr[2][2] = this.player;
-        return true;
+        break;
 
       default:
         console.log("That's not a valid location!\n");
         return false;
     }
+
+    this.placed[str] = true;
+    this.counter++;
+    console.log(`Player ${this.player} has played a piece in position ${str}.\n`);
+    console.log(this.boardStr + '\n');
+    return true;
   }
 }
