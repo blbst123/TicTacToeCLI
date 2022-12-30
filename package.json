@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/blbst123/TicTacToeCLI#readme",
   "dependencies": {
-    "mocha": "^6.1.4"
+    "mocha": "^10.2.0"
   }
 }
